@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Convert coin</title>
+</head>
+<body>
+    <header>
+        <h2>Conversor coin</h2>
+
+        <button id="toggle-mode">
+            <p class="dm">Dark</p>
+            <p class="lm">Light</p>
+        </button>
+        <script>
+            const toggleBtn = document.getElementById('toggle-mode');
+            const body = document.body;
+
+            toggleBtn.addEventListener("click", function(){
+                body.classList.toggle("dark-mode");
+            });
+        </script>
+    </header>
+
+    <main>
+        <div class="intro">
+            <h1>Converta a moeda</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente dolor porro praesentium? Voluptate repudiandae obcaecati voluptatibus vel eum qui labore perferendis officiis libero ea? Minus et assumenda placeat rem reprehenderit?</p>
+        </div>
+
+        <!--input Real $R-->
+        <div class="container">
+            <label for="real">Real Brasileiro</label>
+            <input type="number" name="" id="real">
+            
+            <button onclick="converterMoeda()">Converter</button>
+
+            <p>Este valor é equivalente a <span id="resultado"></span></p>
+
+            <script>
+                function converterMoeda() {
+                    const real = document.getElementById('real').value;
+                    const dolar = (1.00 / 5.06 * real);
+                    //const dolar = (real * 5.06)
+
+                    document.getElementById('resultado').textContent = dolar.toFixed(2);
+
+                }
+            </script>
+        </div>
+    </main>
+
+    <footer></footer>
+</body>
+</html>
